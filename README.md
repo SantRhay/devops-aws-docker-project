@@ -1,105 +1,51 @@
+![Deploy Status](https://github.com/SantRhay/devops-aws-docker-project.git/workflows/deploy.yml/badge.svg)
+
 # 🚀 Projeto DevOps na AWS
 
-Projeto prático de deploy de aplicação estática utilizando Docker dentro de uma instância EC2 na AWS.
+Projeto prático demonstrando CI/CD automatizado utilizando AWS EC2, Docker e GitHub Actions.
 
 ---
 
-## 📌 Sobre o Projeto
+## 📌 Arquitetura
 
-Este projeto demonstra na prática conhecimentos em:
-
-- Provisionamento de servidor na AWS
-- Containerização com Docker
-- Servidor Web Nginx
-- Deploy manual em ambiente Linux
-- Versionamento com Git e GitHub
-
----
-
-## 🏗 Arquitetura da Solução
-
-Usuário → Internet → AWS EC2 → Docker → Nginx → Aplicação HTML
+- GitHub (repositório)
+- GitHub Actions (pipeline CI/CD)
+- AWS EC2 (servidor)
+- Docker (containerização)
+- Nginx (servidor web)
+- Linux Ubuntu
 
 ---
 
-## 🛠 Tecnologias Utilizadas
+## ⚙️ Fluxo de Deploy
 
-- AWS EC2
-- Docker
-- Nginx
-- Linux (Ubuntu)
-- Git & GitHub
-
----
-
-## 📂 Estrutura do Projeto
-
-
-portfolio-devops/
-│
-├── Dockerfile
-├── index.html
-├── css/
-│   └── style.css
-└── README.md
-
+1. Desenvolvedor realiza git push
+2. GitHub Actions é acionado automaticamente
+3. Pipeline conecta via SSH na EC2
+4. Docker build da aplicação
+5. Container é recriado automaticamente
+6. Aplicação atualizada em produção
 
 ---
 
-## ⚙️ Como Executar o Projeto
+## 🔐 Segurança
 
-### 1️⃣ Clonar o repositório
-
-
-git clone git@github.com:SantRhay/devops-aws-docker-project.git
-cd devops-aws-docker-project
-
-
-### 2️⃣ Build da imagem Docker
-
-
-docker build -t rayane-portfolio .
-
-
-### 3️⃣ Executar o container
-
-
-docker run -d -p 80:80 rayane-portfolio
-
+- Autenticação via chave SSH
+- Secrets protegidos no GitHub
+- Security Group liberando apenas portas necessárias
 
 ---
 
-## 🌐 Acesso à Aplicação
+## 🌐 Aplicação Online
 
-A aplicação estará disponível via IP público da EC2:
-
-
-http://SEU-IP-PUBLICO
-
+http://54.196.166.20
 
 ---
 
-## 🎯 Objetivo
+## 🧠 Conceitos aplicados
 
-Projeto desenvolvido para consolidar conhecimentos em Cloud e DevOps, demonstrando habilidades práticas em:
-
-- Deploy manual em ambiente Linux
-- Containerização de aplicação
-- Publicação de projeto no GitHub
-- Estruturação profissional de repositório
-
----
-
-## 📈 Próximos Passos (Evolução do Projeto)
-
-- Implementar CI/CD com GitHub Actions
-- Automatizar deploy
-- Provisionar infraestrutura com Terraform
-- Implementar HTTPS com Certbot
-
----
-
-## 👩‍💻 Desenvolvido por
-
-Rayane Santana  
-Projeto de estudo DevOps & Cloud
+- CI/CD
+- Automação de Deploy
+- Containerização
+- Infraestrutura em Cloud
+- Segurança com SSH
